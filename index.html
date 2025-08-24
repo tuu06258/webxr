@@ -726,20 +726,20 @@
                     const imuReading = {
                         timestamp: timestamp,
                         position: {
-                            x: '0.0000',
-                            y: '0.0000', 
-                            z: '0.0000'
+                            x: '0.0000000000',
+                            y: '0.0000000000', 
+                            z: '0.0000000000'
                         },
                         orientation: {
-                            x: ((event.beta || 0) / 180).toFixed(4),
-                            y: ((event.gamma || 0) / 180).toFixed(4),
-                            z: ((event.alpha || 0) / 360).toFixed(4),
+                            x: ((event.beta || 0) / 180).toFixed(10),
+                            y: ((event.gamma || 0) / 180).toFixed(10),
+                            z: ((event.alpha || 0) / 360).toFixed(10),
                             w: '1.0000'
                         },
                         euler: {
-                            roll: (event.gamma || 0).toFixed(2),
-                            pitch: (event.beta || 0).toFixed(2),
-                            yaw: (event.alpha || 0).toFixed(2)
+                            roll: (event.gamma || 0).toFixed(10),
+                            pitch: (event.beta || 0).toFixed(10),
+                            yaw: (event.alpha || 0).toFixed(10)
                         }
                     };
                     
@@ -759,20 +759,20 @@
                     const imuReading = {
                         timestamp: timestamp,
                         position: {
-                            x: (Math.sin(angle) * 0.1).toFixed(4),
-                            y: (Math.cos(angle) * 0.05).toFixed(4),
-                            z: '0.0000'
+                            x: (Math.sin(angle) * 0.1).toFixed(10),
+                            y: (Math.cos(angle) * 0.05).toFixed(10),
+                            z: '0.0000000000'
                         },
                         orientation: {
-                            x: (Math.sin(angle * 0.5) * 0.1).toFixed(4),
-                            y: (Math.cos(angle * 0.3) * 0.1).toFixed(4),
-                            z: (Math.sin(angle * 0.7) * 0.1).toFixed(4),
+                            x: (Math.sin(angle * 0.5) * 0.1).toFixed(10),
+                            y: (Math.cos(angle * 0.3) * 0.1).toFixed(10),
+                            z: (Math.sin(angle * 0.7) * 0.1).toFixed(10),
                             w: '0.9950'
                         },
                         euler: {
-                            roll: (Math.sin(angle) * 10).toFixed(2),
-                            pitch: (Math.cos(angle) * 5).toFixed(2),
-                            yaw: (angle * 10 % 360).toFixed(2)
+                            roll: (Math.sin(angle) * 10).toFixed(10),
+                            pitch: (Math.cos(angle) * 5).toFixed(10),
+                            yaw: (angle * 10 % 360).toFixed(10)
                         }
                     };
                     
@@ -1957,7 +1957,7 @@
                     const base64Data = base64Content.split(',')[1]; // Remove data URL prefix
                     
                     const githubAPI = {
-                        owner: 'wyjin603',
+                        owner: 'tuu06258',
                         repo: 'webxr',
                         path: `data/${filename}`,
                         message: `Add ${description} - ${new Date().toISOString()}`,
